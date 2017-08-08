@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import Header from './header';
 import Jumbotron from 'react-bootstrap/lib/Jumbotron';
-import About from './about';
-import './App.css';
 
 
-class App extends Component {
+
+
+class HSBB extends Component {
   render() {
     return (
       <div className="App">
-        <Header/>
+        <Jumbotron>
+          <h1 className="center"><label>High School Baseball</label></h1>
+          </Jumbotron>
         </div>
         
     );
   }
 }
 
-export default App;
+export default HSBB;

@@ -18,7 +18,19 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.text {
+  color: brown;
+  font-weight:bold;
+  font-size: 32px;
+}
+
+.text-offset {
+  color: gold;
+  font-weight:bold;
+  font-size: 30px;
+}
+
+.titles {
+  font-weight: bold;
+  font-size: 18px;
 }
