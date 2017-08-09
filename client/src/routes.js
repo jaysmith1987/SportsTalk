@@ -18,12 +18,16 @@ import MLB from './mlb';
 import HSFB from './hsfb';
 import CFB from './cfb';
 import NFL from './nfl';
+import Login from './login';
+import Register from './register';
+import Header from './header';
 
 
 const Routes = (props) => (
   <Router {...props}>
     <div>
-    <Route path="/" component={App} />
+    <Route path="/" component={Header}/>
+    <Route exact path="/" component={App} />
     <Route path="/About" component={About} />
     <Route path="/Football" component={Football}/>
     <Route path="/Basketball" component={Basketball}/>
@@ -39,6 +43,8 @@ const Routes = (props) => (
     <Route path="/HSFB" component={HSFB}/>
     <Route path="/CFB" component={CFB}/>
     <Route path="/NFL" component={NFL}/>
+    <Route path="/Login" component={Login}/>
+    <Route path="/Register" component={Register}/>
     </div>
   </Router>
 );

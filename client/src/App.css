@@ -2,8 +2,25 @@
   text-align: center;
 }
 
+.Login {
+  text-align: center;
+  margin-left: 300px;
+  width:50%;
+  background: light gray;
+}
+
+.Carousel {
+  text-align: center;
+  margin-left:150px;
+  margin-right:150px;
+  margin-top:50px;
+  margin-bottom:50px;
+  width:75%;
+  background: light gray;
+}
+
+
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
@@ -33,4 +50,31 @@
 .titles {
   font-weight: bold;
   font-size: 18px;
+}
+.main-img {
+  height: 60px;
+  width: 100px;
+  margin-top: 0px;
+  margin-bottom:0px;
+}
+
+.red {
+  color:red;
+}
+
+.black {
+  color: black;
+}
+.sub-title {
+  color: black;
+  font-size:22px;
+  font-weight: bold;
+}
+
+.align-top {
+  margin-top:0px;
+}
+
+.link-color {
+  color: blue;
 }
