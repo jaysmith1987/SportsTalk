@@ -141,7 +141,6 @@ app.put('/posts/:_id', function(req,res){
   var update = {
     '$set': {
       title:user.title,
-      author:post.author,
       blog:post.blog,
       comments:post.comments
     }
