@@ -140,7 +140,7 @@ app.put('/posts/:_id', function(req,res){
   var query = req.params._id;
   var update = {
     '$set': {
-      title:user.title,
+      title:post.title,
       blog:post.blog,
       comments:post.comments
     }
@@ -152,6 +152,57 @@ app.put('/posts/:_id', function(req,res){
       throw err;
     }
     res.json(posts);
+  })
+});
+
+var Comments = require('./models/comments.js');
+
+app.post('/comments', function(req,res){
+  var comment = req.body;
+
+  Comments.create(comment, function(err, comments){
+    if(err){
+      throw err;
+    }
+    res.json(comments);
+  })
+});
+
+app.get('/comments', function(req,res){
+  Comments.find(function(err, comments){
+    if(err) {
+      throw err;
+    }
+    res.json(comments)
+  })
+});
+
+app.delete('/comments/:_id', function(req,res){
+  var query = {_id: req.params._id};
+
+  Comments.remove(query, function(err, comments){
+    if(err){
+      throw err;
+    }
+    res.json(comments);
+  })
+});
+
+app.put('/comments/:_id', function(req,res){
+  var comment = req.body
+  var query = req.params._id;
+  var update = {
+    '$set': {
+      message: comment.message
+    }
+  };
+  var options = {new: true};
+
+  Comments.findOneAndUpdate(query, update, options, function(err, comments){
+    if(err){
+      throw err;
+    }
+    res.json(comments);
   })
 });
 
