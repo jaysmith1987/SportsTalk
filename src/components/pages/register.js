@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {FormGroup, FormControl, Form, Col, ControlLabel, Panel, Button, Well} from 'react-bootstrap';
 
-const title = (
-  <h1>Register</h1>
-);
+
 
 class Register extends Component {
   render() {

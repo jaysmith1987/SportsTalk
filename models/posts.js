@@ -3,10 +3,10 @@ var Schema = mongoose.Schema;
 
 var postSchema = new Schema({
     title: String,
-    author: [{type: Schema.ObjectId, ref: 'user'}],
-    body: String,
-    category: String,
-    comments: [{body: String, data: Date}],
+    author: [{type: Schema.ObjectId, ref: 'users'}],
+    blog: [{ body: String, required: true}],
+    category: [{String, required:true }],
+    comments: [{type:Schema.ObjectId, ref:'comments'}],
     date: { type:Date, default: Date.now}
 });
 
