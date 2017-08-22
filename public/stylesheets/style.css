@@ -1,0 +1,14 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.container {
+    width: auto;
+    max-width: 900px;
+    padding: 0 15px;
+}
+
+.container .footer-text {
+    margin: 20px 0;
+}

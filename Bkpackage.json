@@ -1,0 +1,55 @@
+{
+  "name": "sportstalkp",
+  "version": "1.0.0",
+  "description": "An app for sports fan to blog about sports",
+  "main": "app.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server.js",
+    "client": "node start-client.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaysmith1987/SportsTalk.git"
+  },
+  "keywords": [
+    "sports",
+    "app",
+    "blog",
+    "fans",
+    "basketball",
+    "football",
+    "baseball"
+  ],
+  "author": "Jared Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaysmith1987/SportsTalk/issues"
+  },
+  "homepage": "https://github.com/jaysmith1987/SportsTalk#readme",
+  "dependencies": {
+    "mongoose": "~4.4",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "passport-facebook": "~1.0.2",
+    "passport-twitter": "~1.0.2",
+    "passport-google-oauth": "~0.1.5",
+    "connect-flash": "~0.1.1",
+    "bcrypt-nodejs": "latest",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.0",
+    "method-override": "~1.0.0",
+    "config": "^1.26.1",
+    "express": "^4.15.3",
+    "express-session": "~1.0.0",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.0",
+    "sequelize": "^4.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "express-react-views": "^0.10.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
