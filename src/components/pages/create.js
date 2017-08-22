@@ -1,7 +1,7 @@
 
 import { Editor, Raw } from 'slate'
 import React from 'react'
-import {Panel, Well} from 'react-bootstrap';
+import {Panel, Well, FormGroup, ControlLabel, FormControl, Row, Col, Button} from 'react-bootstrap';
 import initialState from './state.json'
 
 
@@ -214,8 +214,38 @@ class Create extends React.Component {
     return (
       <Panel style={{marginTop:'100px'}}>
        <Well>
+         <Row>
+            <ControlLabel>Category:</ControlLabel>
+        <FormGroup controlId="formControlsSelect">
+          <FormControl componentClass="select" placeholder="Select Category">
+            <option value="select">Select Category</option>
+            <option value="other">Basketball</option>
+            <option value="other">Football</option>
+            <option value="other">Baseball</option>
+          </FormControl>
+        </FormGroup>
+        <FormGroup>
+           <ControlLabel>Title:</ControlLabel>
+          <FormControl
+            type="text"
+            value={this.state.value}
+            placeholder="Enter title here"
+            spellCheck="true"
+            onChange={this.handleChange}
+          />
+          </FormGroup>
+        </Row>
         {this.renderToolbar()}
         {this.renderEditor()}
+        <Row>
+          <FormGroup style={{marginTop:'10px'}}>
+          <Col xs={6} sm={4}>
+            <Button  bsStyle="info" type="submit">
+              Submit Post
+            </Button>
+          </Col>
+        </FormGroup>
+        </Row>
        </Well>
       </Panel>
     )
@@ -229,7 +259,7 @@ class Create extends React.Component {
 
   renderToolbar = () => {
     return (
-      <div className="menu toolbar-menu">
+      <div className="menu toolbar-menu" >
         {this.renderMarkButton('bold', 'format_bold')}
         {this.renderMarkButton('italic', 'format_italic')}
         {this.renderMarkButton('underlined', 'format_underlined')}
@@ -284,10 +314,10 @@ class Create extends React.Component {
 
   renderEditor = () => {
     return (
-      <div className="editor">
+      <div className="editor" style={{backgroundColor: 'white', height: '200px', width: '100%', border: '2px solid black', overflow:'auto'}}>
         <Editor
           spellCheck
-          placeholder={'Enter some rich text...'}
+          placeholder={'Enter text here...'}
           schema={schema}
           state={this.state.state}
           onChange={this.onChange}

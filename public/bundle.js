@@ -65185,10 +65185,10 @@ var Create = function (_React$Component) {
     }, _this.renderEditor = function () {
       return _react2.default.createElement(
         'div',
-        { className: 'editor' },
+        { className: 'editor', style: { backgroundColor: 'white', height: '200px', width: '100%', border: '2px solid black', overflow: 'auto' } },
         _react2.default.createElement(_slate.Editor, {
           spellCheck: true,
-          placeholder: 'Enter some rich text...',
+          placeholder: 'Enter text here...',
           schema: schema,
           state: _this.state.state,
           onChange: _this.onChange,
@@ -65264,8 +65264,78 @@ var Create = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.Well,
           null,
+          _react2.default.createElement(
+            _reactBootstrap.Row,
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.ControlLabel,
+              null,
+              'Category:'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { controlId: 'formControlsSelect' },
+              _react2.default.createElement(
+                _reactBootstrap.FormControl,
+                { componentClass: 'select', placeholder: 'Select Category' },
+                _react2.default.createElement(
+                  'option',
+                  { value: 'select' },
+                  'Select Category'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'other' },
+                  'Basketball'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'other' },
+                  'Football'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'other' },
+                  'Baseball'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.ControlLabel,
+                null,
+                'Title:'
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                type: 'text',
+                value: this.state.value,
+                placeholder: 'Enter title here',
+                spellCheck: 'true',
+                onChange: this.handleChange
+              })
+            )
+          ),
           this.renderToolbar(),
-          this.renderEditor()
+          this.renderEditor(),
+          _react2.default.createElement(
+            _reactBootstrap.Row,
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { style: { marginTop: '10px' } },
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { xs: 6, sm: 4 },
+                _react2.default.createElement(
+                  _reactBootstrap.Button,
+                  { bsStyle: 'info', type: 'submit' },
+                  'Submit Post'
+                )
+              )
+            )
+          )
         )
       );
     }
@@ -77311,7 +77381,7 @@ exports.default = {
 /* 698 */
 /***/ (function(module, exports) {
 
-module.exports = {"nodes":[{"kind":"block","type":"paragraph","nodes":[{"kind":"text","ranges":[{"text":"Insert text here "},{"text":"rich","marks":[{"type":"bold"}]},{"text":" text, "},{"text":"much","marks":[{"type":"italic"}]},{"text":" better than a "},{"text":"<textarea>","marks":[{"type":"code"}]},{"text":"!"}]}]},{"kind":"block","type":"paragraph","nodes":[{"kind":"text","ranges":[{"text":"Since it's rich text, you can do things like turn a selection of text "},{"text":"bold","marks":[{"type":"bold"}]}]}]}]}
+module.exports = {"nodes":[{"kind":"block","type":"paragraph","nodes":[{"kind":"text","ranges":[{"text":"Insert text here "}]}]}]}
 
 /***/ })
 /******/ ]);
