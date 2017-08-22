@@ -1,13 +1,16 @@
+"use strict"
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var postSchema = new Schema({
+var postsSchema = new Schema({
     title: String,
     author: [{type: Schema.ObjectId, ref: 'users'}],
-    blog: [{ body: String, required: true}],
-    category: [{String, required:true }],
+    blog: String,
+    category: String,
     comments: [{type:Schema.ObjectId, ref:'comments'}],
     date: { type:Date, default: Date.now}
 });
 
-export default mongoose.model('posts', postSchema);
+var Posts = mongoose.model('Posts', postsSchema);
+module.exports = Posts;

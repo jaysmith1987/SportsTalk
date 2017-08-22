@@ -1,3 +1,5 @@
+"use strict"
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -30,7 +32,7 @@ var userSchema = new Schema({
     password: {
         type: String,
         required: true,
-        set: validator()
+        set: validator
     },
     followers: {
         type: Number,
@@ -40,4 +42,5 @@ var userSchema = new Schema({
     comments: [{type:Schema.ObjectId, ref:'comments'}]
 });
 
-export default mongoose.model('users', userSchema);
+
+module.exports = mongoose.model('User', userSchema);
