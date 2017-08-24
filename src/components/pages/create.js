@@ -1,7 +1,7 @@
 
 import { Editor, Raw } from 'slate'
 import React from 'react'
-import {Panel, Well, FormGroup, ControlLabel, FormControl, Row, Col, Button} from 'react-bootstrap';
+import {Panel, Well, Button, ButtonGroup, ButtonToolbar} from 'react-bootstrap';
 import initialState from './state.json'
 
 
@@ -43,7 +43,7 @@ const schema = {
  */
 
 class Create extends React.Component {
-
+  
   /**
    * Deserialize the initial editor state.
    *
@@ -212,42 +212,10 @@ class Create extends React.Component {
 
   render() {
     return (
-      <Panel style={{marginTop:'100px'}}>
-       <Well>
-         <Row>
-            <ControlLabel>Category:</ControlLabel>
-        <FormGroup controlId="formControlsSelect">
-          <FormControl componentClass="select" placeholder="Select Category">
-            <option value="select">Select Category</option>
-            <option value="other">Basketball</option>
-            <option value="other">Football</option>
-            <option value="other">Baseball</option>
-          </FormControl>
-        </FormGroup>
-        <FormGroup>
-           <ControlLabel>Title:</ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.value}
-            placeholder="Enter title here"
-            spellCheck="true"
-            onChange={this.handleChange}
-          />
-          </FormGroup>
-        </Row>
+      <div>
         {this.renderToolbar()}
         {this.renderEditor()}
-        <Row>
-          <FormGroup style={{marginTop:'10px'}}>
-          <Col xs={6} sm={4}>
-            <Button  bsStyle="info" type="submit">
-              Submit Post
-            </Button>
-          </Col>
-        </FormGroup>
-        </Row>
-       </Well>
-      </Panel>
+      </div>
     )
   }
 
@@ -259,17 +227,21 @@ class Create extends React.Component {
 
   renderToolbar = () => {
     return (
-      <div className="menu toolbar-menu" >
-        {this.renderMarkButton('bold', 'format_bold')}
-        {this.renderMarkButton('italic', 'format_italic')}
-        {this.renderMarkButton('underlined', 'format_underlined')}
-        {this.renderMarkButton('code', 'code')}
-        {this.renderBlockButton('heading-one', 'looks_one')}
-        {this.renderBlockButton('heading-two', 'looks_two')}
-        {this.renderBlockButton('block-quote', 'format_quote')}
-        {this.renderBlockButton('numbered-list', 'format_list_numbered')}
-        {this.renderBlockButton('bulleted-list', 'format_list_bulleted')}
-      </div>
+  
+        <ButtonToolbar>
+          <ButtonGroup>
+              <Button bsSize="small" style={{border:'2px solid black'}}>{this.renderMarkButton('bold', 'format_bold')}</Button>
+              <Button bsSize="small" style={{border:'2px solid black'}}>{this.renderMarkButton('italic', 'format_italic')}</Button>
+              <Button bsSize="small" style={{border:'2px solid black'}}>{this.renderMarkButton('underlined', 'format_underlined')}</Button>
+              <Button bsSize="small" style={{border:'2px solid black'}}>{this.renderMarkButton('code', 'code')}</Button>
+              <Button bsSize="small" style={{border:'2px solid black'}}>{this.renderBlockButton('heading-one', 'looks_one')}</Button>
+              <Button bsSize="small" style={{border:'2px solid black'}}>{this.renderBlockButton('heading-two', 'looks_two')}</Button>
+              <Button bsSize="small" style={{border:'2px solid black'}}>{this.renderBlockButton('block-quote', 'format_quote')}</Button>
+              <Button bsSize="small" style={{border:'2px solid black'}}>{this.renderBlockButton('numbered-list', 'format_list_numbered')}</Button>
+              <Button bsSize="small" style={{border:'2px solid black'}}>{this.renderBlockButton('bulleted-list', 'format_list_bulleted')}</Button>
+          </ButtonGroup>
+      </ButtonToolbar>
+  
     )
   }
 
@@ -314,8 +286,8 @@ class Create extends React.Component {
 
   renderEditor = () => {
     return (
-      <div className="editor" style={{backgroundColor: 'white', height: '200px', width: '100%', border: '2px solid black', overflow:'auto'}}>
-        <Editor
+      <div className="editor">
+        <Editor style={{backgroundColor: 'white', height: '200px', width: '100%', border: '2px solid black', overflow:'auto'}}
           spellCheck
           placeholder={'Enter text here...'}
           schema={schema}

@@ -6,8 +6,8 @@ import AboutText from './about.text';
 class About extends Component {
   render() {
     return (
-      <div style={{marginTop:'100px'}}>
-        <Panel>
+      <div className="container body">
+        <Panel style={{marginTop:'100px'}}>
         <Jumbotron >
         <h2 style={{textAlign:'center'}}><b>Welcome to SportsTalk</b></h2>
           <AboutText/>

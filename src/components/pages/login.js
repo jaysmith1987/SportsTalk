@@ -6,20 +6,43 @@ const title = (
 );
 
 class Login extends Component {
+  constructor(props){
+    super(props);
+    this.state = {user:'', pass:'', loggedIn: false}
+  }
+
+  handleUser(event){
+    this.setState({user:event.target.value.substr(0,15)})
+  }
+
+  handlePass(event){
+    this.setState({pass:event.target.value})
+  }
+
+  login(event){
+    event.preventDefault();
+    this.setState({loggedIn: true})
+    console.log(this.state.pass);
+    console.log(this.state.user);
+  }
+
+
   render() {
     return (
-      <div>
+      <div className="container body">
     <Panel style={{marginTop: '100px'}}>
       <Well>
       <h2 style={{textAlign: 'center'}}><b>Login</b></h2>
-      <Form horizontal>
+      <Form horizontal onSubmit={this.login.bind(this)}>
 
      <FormGroup controlId="formHorizontalUsername">
       <Col componentClass={ControlLabel} sm={2}>
         Username:
       </Col>
       <Col sm={10}>
-        <FormControl type="username" placeholder="Username" />
+        <FormControl type="username" placeholder="Username" 
+        onChange={this.handleUser.bind(this)} value={this.state.user}/>
+        {this.state.user === '' && this.state.loggedIn && <span className="error">Enter a Username</span>}
       </Col>
     </FormGroup>
 
@@ -28,7 +51,9 @@ class Login extends Component {
         Password:
       </Col>
       <Col sm={10}>
-        <FormControl type="password" placeholder="Password" />
+        <FormControl type="password" placeholder="Password" 
+        onChange={this.handlePass.bind(this)} value={this.state.pass}/>
+         {this.state.pass === '' && this.state.loggedIn && <span className="error">Enter a Pasword</span>}
       </Col>
     </FormGroup>
 

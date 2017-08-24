@@ -2,16 +2,26 @@ body {
     margin-top: 50px;
 }
 
-.container {
+.container .body {
     width: auto;
-    max-width: 900px;
-    padding: 0 15px;
+    height: auto;
+    margin: 20px 0;
+}
+
+.container .header-text {
+    margin: 20px 0;
 }
 
 .container .footer-text {
-    margin: 20px 0;
+    margin: 20px 80px 0;
 }
 
 .badge {
     background-color: #e4aa48;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
 }

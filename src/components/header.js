@@ -6,6 +6,7 @@ import {Nav, NavItem, Navbar, NavDropdown, Label} from 'react-bootstrap';
 class Header extends React.Component{
     render(){
         return(
+          <div className="container header-text">
      <Navbar inverse fixedTop>
     <Navbar.Header>
       <Navbar.Brand href="/">
@@ -26,13 +27,14 @@ class Header extends React.Component{
         <NavItem eventKey={2} href="/contacts">Contact Us</NavItem>
       </Nav>
       <Nav pullRight>
-        <NavItem  eventKey={4} href="/create">Create</NavItem>
+        <NavItem  eventKey={4} href="/posts">Create Post</NavItem>
         <NavItem  eventKey={5} href="/register">Register</NavItem>
         <NavItem  eventKey={6} href="/login">Login</NavItem>
         <NavItem  eventKey={7} href="/about">About</NavItem>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
+  </div>
 
         )
     }

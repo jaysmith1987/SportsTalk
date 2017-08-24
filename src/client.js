@@ -24,7 +24,7 @@ import Football from './components/pages/football';
 import Baseball from './components/pages/baseball';
 import Login from './components/pages/login';
 import Register from './components/pages/register';
-import Create from './components/pages/create';
+import Posts from './components/pages/posts';
 
 
 //import NotFound from './components/pages/notfound';
@@ -40,7 +40,7 @@ const Routes = (
                 <Route path="/basketball" component={Basketball}/>
                 <Route path="/baseball" component={Baseball}/>
                 <Route path="/login" component={Login}/>
-                <Route path="/create" component={Create}/>
+                <Route path="/posts" component={Posts}/>
                 <Route path="/register" component={Register}/>
             </Route>
         </Router>
