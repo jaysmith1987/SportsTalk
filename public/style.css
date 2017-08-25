@@ -1,20 +1,29 @@
 body {
-    margin-top: 50px;
+    margin-top: 80px;
+}
+ .body {
+    position: fixed;
+    top: 60px;
+    overflow: scroll;
 }
 
-.container .body {
-    width: auto;
-    height: auto;
-    margin: 20px 0;
+ .article {
+   position: fixed;
+   right: 0px;
+}
+
+.rankings {
+    position: fixed;
+    top: 130px;
+    left: 0px;
+    height: 50px;
+    width: 350px;
 }
 
 .container .header-text {
     margin: 20px 0;
 }
 
-.container .footer-text {
-    margin: 20px 80px 0;
-}
 
 .badge {
     background-color: #e4aa48;
@@ -24,4 +33,15 @@ body {
     color: red;
     font-weight: bold;
     font-size: 16px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }

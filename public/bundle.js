@@ -63878,6 +63878,8 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactBootstrap = __webpack_require__(51);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -63885,24 +63887,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function timeTick() {
-    var element = _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-            "h1",
-            null,
-            "The time is: "
-        ),
-        _react2.default.createElement(
-            "h2",
-            null,
-            "time: ",
-            new Date().toLocaleTimeString()
-        )
-    );
-}
 
 var Footer = function (_React$Component) {
     _inherits(Footer, _React$Component);
@@ -63914,21 +63898,9 @@ var Footer = function (_React$Component) {
     }
 
     _createClass(Footer, [{
-        key: "render",
+        key: 'render',
         value: function render() {
-            return _react2.default.createElement(
-                "footer",
-                { className: "footer text-center" },
-                _react2.default.createElement(
-                    "div",
-                    { className: "container" },
-                    _react2.default.createElement(
-                        "p",
-                        { className: "footer-text" },
-                        "Copyright 2017 SportsTalkPro. All rights reserved "
-                    )
-                )
-            );
+            return _react2.default.createElement(_reactBootstrap.Panel, { className: 'footer', footer: 'Copyright 2017 SportsTalkPro. All rights reserved' });
         }
     }]);
 
@@ -63958,6 +63930,16 @@ var _Jumbotron = __webpack_require__(601);
 
 var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
 
+var _reactBootstrap = __webpack_require__(51);
+
+var _userRank = __webpack_require__(701);
+
+var _userRank2 = _interopRequireDefault(_userRank);
+
+var _homeArt = __webpack_require__(702);
+
+var _homeArt2 = _interopRequireDefault(_homeArt);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -63980,19 +63962,19 @@ var Home = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { style: { marginTop: '100px' } },
+        null,
         _react2.default.createElement(
-          _Jumbotron2.default,
-          null,
-          _react2.default.createElement(
-            'h1',
-            { style: { textAlign: 'center' } },
-            _react2.default.createElement(
-              'b',
-              null,
-              'Home Page'
-            )
-          )
+          _reactBootstrap.Col,
+          { xs: 6, md: 3, style: { marginLeft: '0px' } },
+          _react2.default.createElement(_userRank2.default, null)
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          _reactBootstrap.Col,
+          { xs: 6, md: 3, className: 'article' },
+          _react2.default.createElement(_homeArt2.default, null)
         )
       );
     }
@@ -77658,6 +77640,340 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports = {"nodes":[{"kind":"block","type":"paragraph","nodes":[{"kind":"text","ranges":[{"text":""}]}]}]}
+
+/***/ }),
+/* 700 */,
+/* 701 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(51);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UserRank = function (_Component) {
+    _inherits(UserRank, _Component);
+
+    function UserRank() {
+        _classCallCheck(this, UserRank);
+
+        return _possibleConstructorReturn(this, (UserRank.__proto__ || Object.getPrototypeOf(UserRank)).apply(this, arguments));
+    }
+
+    _createClass(UserRank, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'rankings' },
+                _react2.default.createElement(
+                    _reactBootstrap.Panel,
+                    { style: { backgroundColor: 'lightblue', border: '2px solid black' } },
+                    _react2.default.createElement(
+                        _reactBootstrap.Well,
+                        { style: { backgroundColor: 'white', border: '2px solid black' } },
+                        _react2.default.createElement(
+                            'h4',
+                            { className: 'text-center' },
+                            _react2.default.createElement(
+                                'strong',
+                                null,
+                                'LeaderBoard'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            _reactBootstrap.Table,
+                            { bordered: true, hover: true, responsive: true, style: { border: '2px solid black' } },
+                            _react2.default.createElement(
+                                'thead',
+                                null,
+                                _react2.default.createElement(
+                                    'tr',
+                                    null,
+                                    _react2.default.createElement(
+                                        'th',
+                                        null,
+                                        'Rank'
+                                    ),
+                                    _react2.default.createElement(
+                                        'th',
+                                        null,
+                                        'Username'
+                                    ),
+                                    _react2.default.createElement(
+                                        'th',
+                                        null,
+                                        'Likes'
+                                    ),
+                                    _react2.default.createElement(
+                                        'th',
+                                        null,
+                                        'Posts'
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tbody',
+                                null,
+                                _react2.default.createElement(
+                                    'tr',
+                                    null,
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '1'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        'Mark'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '52'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '21'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'tr',
+                                    null,
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '2'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        'Demmy'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '43'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '25'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'tr',
+                                    null,
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '3'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        'Larry'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '40'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '22'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'tr',
+                                    null,
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '4'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        'Barry'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '20'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '22'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'tr',
+                                    null,
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '5'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        'Rarry'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '10'
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        '22'
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return UserRank;
+}(_react.Component);
+
+exports.default = UserRank;
+
+/***/ }),
+/* 702 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(51);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomeArticle = function (_Component) {
+    _inherits(HomeArticle, _Component);
+
+    function HomeArticle() {
+        _classCallCheck(this, HomeArticle);
+
+        return _possibleConstructorReturn(this, (HomeArticle.__proto__ || Object.getPrototypeOf(HomeArticle)).apply(this, arguments));
+    }
+
+    _createClass(HomeArticle, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'article' },
+                _react2.default.createElement(
+                    _reactBootstrap.Panel,
+                    { style: { width: '300px' } },
+                    _react2.default.createElement(
+                        _reactBootstrap.Well,
+                        null,
+                        _react2.default.createElement(
+                            'h4',
+                            { className: 'text-center' },
+                            'Latest Articles'
+                        ),
+                        _react2.default.createElement(
+                            'ul',
+                            null,
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'espn.com' },
+                                'Article 1'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'ul',
+                            null,
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'nbadraft.net' },
+                                'Article 2'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'ul',
+                            null,
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'bleacherreport.com' },
+                                'Article 3'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'ul',
+                            null,
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'mlb.com' },
+                                'Article 4'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'ul',
+                            null,
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'nfl.com' },
+                                'Article 5'
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return HomeArticle;
+}(_react.Component);
+
+exports.default = HomeArticle;
 
 /***/ })
 /******/ ]);
