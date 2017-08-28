@@ -47,9 +47,8 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="container body">
-    <Panel style={{marginTop: '80px'}}>
-      <Well>
+      <div>
+      <Well style={{marginTop: '80px'}}>
       <h2 style={{textAlign: 'center'}}><b>Register</b></h2>
       <Form horizontal onSubmit={this.register.bind(this)}>
     <FormGroup controlId="formHorizontalEmail">
@@ -128,7 +127,6 @@ class Register extends Component {
     </FormGroup>
   </Form>
   </Well>
-  </Panel>
   </div>
     );
   }

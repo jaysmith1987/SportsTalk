@@ -29,9 +29,8 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="container body">
-    <Panel style={{marginTop: '100px'}}>
-      <Well>
+      <div>
+      <Well style={{marginTop:'100px'}}>
       <h2 style={{textAlign: 'center'}}><b>Login</b></h2>
       <Form horizontal onSubmit={this.login.bind(this)}>
 
@@ -78,7 +77,6 @@ class Login extends Component {
 
    
   </Well>
-  </Panel>
   </div>
 
   

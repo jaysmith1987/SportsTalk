@@ -4,7 +4,7 @@ import {Panel, Well} from 'react-bootstrap';
 class HomeArticle extends Component {
     render(){
         return(
-            <div className="article">
+            <div>
             <Panel style={{width:'300px'}}>
                 <Well>
                     <h4 className="text-center">Latest Articles</h4>

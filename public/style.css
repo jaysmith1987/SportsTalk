@@ -1,10 +1,29 @@
 body {
-    margin-top: 80px;
+    margin: 0;
+    padding:0;
+    height: 100%;
+    width: 100%;
 }
- .body {
-    position: fixed;
-    top: 60px;
-    overflow: scroll;
+.body {
+     position:fixed;
+     width: 100%;
+     height: 100%;
+     overflow: auto
+}
+
+
+.register {
+    position: absolute;
+    top:70px;
+    height: 100px;
+    width: 100%;
+}
+
+.login {
+    position: absolute;
+    top: 160px;
+    height: 100px;
+    width: 100%;
 }
 
  .article {
@@ -13,17 +32,25 @@ body {
 }
 
 .rankings {
-    position: fixed;
-    top: 130px;
+    position: relative;
+    top: 60px;
     left: 0px;
     height: 50px;
     width: 350px;
 }
 
-.container .header-text {
-    margin: 20px 0;
+.container {
+    min-height: 100%;
+    position: relative;
 }
 
+.header {
+    position: absolute;
+    top: 0px;
+    left:0px;
+    right: 0px;
+    overflow: hidden;
+}
 
 .badge {
     background-color: #e4aa48;
@@ -39,9 +66,24 @@ body {
     text-align: center;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
+.post {
+    position: absolute;
+    top: 20px;
     width: 100%;
-    text-align: center;
+    padding: 1px;
+}
+
+.about {
+    position:relative;
+    top:180px;
+}
+
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
 }

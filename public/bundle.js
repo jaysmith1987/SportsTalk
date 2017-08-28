@@ -52667,6 +52667,8 @@ var _footer = __webpack_require__(599);
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _reactBootstrap = __webpack_require__(51);
+
 var _reactRedux = __webpack_require__(226);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -52691,10 +52693,16 @@ var Main = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
-                _react2.default.createElement(_header2.default, null),
-                this.props.children,
-                _react2.default.createElement(_footer2.default, null)
+                { className: 'panel panel-default' },
+                _react2.default.createElement(_header2.default, { classname: 'Panel-Header' }),
+                _react2.default.createElement(
+                    _reactBootstrap.Panel,
+                    { className: 'Panel-Body' },
+                    ' ',
+                    this.props.children,
+                    ' '
+                ),
+                _react2.default.createElement(_footer2.default, { className: 'Panel-Footer' })
             );
         }
     }]);
@@ -52751,7 +52759,7 @@ var Header = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container header-text' },
+        null,
         _react2.default.createElement(
           _reactBootstrap.Navbar,
           { inverse: true, fixedTop: true },
@@ -63900,7 +63908,7 @@ var Footer = function (_React$Component) {
     _createClass(Footer, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_reactBootstrap.Panel, { className: 'footer', footer: 'Copyright 2017 SportsTalkPro. All rights reserved' });
+            return _react2.default.createElement(_reactBootstrap.Panel, { footer: 'Copyright 2017 SportsTalkPro. All rights reserved' });
         }
     }]);
 
@@ -63967,6 +63975,29 @@ var Home = function (_Component) {
           _reactBootstrap.Col,
           { xs: 6, md: 3, style: { marginLeft: '0px' } },
           _react2.default.createElement(_userRank2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Col,
+          { xs: 6, md: 3 },
+          _react2.default.createElement(
+            _Jumbotron2.default,
+            { style: { marginTop: '60px', marginLeft: '100px', width: '500px', height: '300px', border: '2px solid black' } },
+            _react2.default.createElement(
+              'h1',
+              { style: { textAlign: 'center' } },
+              'Latest Blog'
+            ),
+            _react2.default.createElement(
+              'p',
+              { style: { textAlign: 'center' } },
+              'Blog snippet'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsStyle: 'info', style: { marginLeft: '80px', marginTop: '40px' } },
+              'Read Article'
+            )
+          )
         ),
         _react2.default.createElement('br', null),
         _react2.default.createElement('br', null),
@@ -64380,24 +64411,20 @@ var About = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container body' },
+        null,
         _react2.default.createElement(
-          _reactBootstrap.Panel,
+          _reactBootstrap.Jumbotron,
           { style: { marginTop: '100px' } },
           _react2.default.createElement(
-            _reactBootstrap.Jumbotron,
-            null,
+            'h2',
+            { style: { textAlign: 'center' } },
             _react2.default.createElement(
-              'h2',
-              { style: { textAlign: 'center' } },
-              _react2.default.createElement(
-                'b',
-                null,
-                'Welcome to SportsTalk'
-              )
-            ),
-            _react2.default.createElement(_about2.default, null)
-          )
+              'b',
+              null,
+              'Welcome to SportsTalk'
+            )
+          ),
+          _react2.default.createElement(_about2.default, null)
         )
       );
     }
@@ -64499,11 +64526,67 @@ var Basketball = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { style: { marginTop: '100px' } },
+        null,
         _react2.default.createElement(
-          'h1',
-          null,
-          'Hello'
+          _reactBootstrap.Carousel,
+          { style: { marginTop: '100px' } },
+          _react2.default.createElement(
+            _reactBootstrap.Carousel.Item,
+            null,
+            _react2.default.createElement('img', { width: 900, height: 500, alt: '900x500', src: '/assets/carousel.png' }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              null,
+              _react2.default.createElement(
+                'h3',
+                null,
+                'First slide label'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Carousel.Item,
+            null,
+            _react2.default.createElement('img', { width: 900, height: 500, alt: '900x500', src: '/assets/carousel.png' }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              null,
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Second slide label'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Carousel.Item,
+            null,
+            _react2.default.createElement('img', { width: 900, height: 500, alt: '900x500', src: '/assets/carousel.png' }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              null,
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Third slide label'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+              )
+            )
+          )
         )
       );
     }
@@ -64531,6 +64614,8 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactBootstrap = __webpack_require__(51);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64553,11 +64638,67 @@ var Football = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { style: { marginTop: '100px' } },
+        null,
         _react2.default.createElement(
-          'h1',
-          null,
-          'fix needed'
+          _reactBootstrap.Carousel,
+          { style: { marginTop: '100px' } },
+          _react2.default.createElement(
+            _reactBootstrap.Carousel.Item,
+            null,
+            _react2.default.createElement('img', { width: 900, height: 500, alt: '900x500', src: '/assets/carousel.png' }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              null,
+              _react2.default.createElement(
+                'h3',
+                null,
+                'First slide label'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Carousel.Item,
+            null,
+            _react2.default.createElement('img', { width: 900, height: 500, alt: '900x500', src: '/assets/carousel.png' }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              null,
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Second slide label'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Carousel.Item,
+            null,
+            _react2.default.createElement('img', { width: 900, height: 500, alt: '900x500', src: '/assets/carousel.png' }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              null,
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Third slide label'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+              )
+            )
+          )
         )
       );
     }
@@ -64585,6 +64726,8 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactBootstrap = __webpack_require__(51);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64607,11 +64750,67 @@ var Baseball = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { style: { marginTop: '100px' } },
+        null,
         _react2.default.createElement(
-          'h1',
-          null,
-          'fix needed'
+          _reactBootstrap.Carousel,
+          { style: { marginTop: '100px' } },
+          _react2.default.createElement(
+            _reactBootstrap.Carousel.Item,
+            null,
+            _react2.default.createElement('img', { width: 900, height: 500, alt: '900x500', src: '/assets/carousel.png' }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              null,
+              _react2.default.createElement(
+                'h3',
+                null,
+                'First slide label'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Carousel.Item,
+            null,
+            _react2.default.createElement('img', { width: 900, height: 500, alt: '900x500', src: '/assets/carousel.png' }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              null,
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Second slide label'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Carousel.Item,
+            null,
+            _react2.default.createElement('img', { width: 900, height: 500, alt: '900x500', src: '/assets/carousel.png' }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              null,
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Third slide label'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+              )
+            )
+          )
         )
       );
     }
@@ -64690,93 +64889,89 @@ var Login = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container body' },
+        null,
         _react2.default.createElement(
-          _reactBootstrap.Panel,
+          _reactBootstrap.Well,
           { style: { marginTop: '100px' } },
           _react2.default.createElement(
-            _reactBootstrap.Well,
-            null,
+            'h2',
+            { style: { textAlign: 'center' } },
             _react2.default.createElement(
-              'h2',
-              { style: { textAlign: 'center' } },
+              'b',
+              null,
+              'Login'
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Form,
+            { horizontal: true, onSubmit: this.login.bind(this) },
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { controlId: 'formHorizontalUsername' },
               _react2.default.createElement(
-                'b',
-                null,
-                'Login'
+                _reactBootstrap.Col,
+                { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
+                'Username:'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { sm: 10 },
+                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'username', placeholder: 'Username',
+                  onChange: this.handleUser.bind(this), value: this.state.user }),
+                this.state.user === '' && this.state.loggedIn && _react2.default.createElement(
+                  'span',
+                  { className: 'error' },
+                  'Enter a Username'
+                )
               )
             ),
             _react2.default.createElement(
-              _reactBootstrap.Form,
-              { horizontal: true, onSubmit: this.login.bind(this) },
+              _reactBootstrap.FormGroup,
+              { controlId: 'formHorizontalPassword' },
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                { controlId: 'formHorizontalUsername' },
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
-                  'Username:'
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { sm: 10 },
-                  _react2.default.createElement(_reactBootstrap.FormControl, { type: 'username', placeholder: 'Username',
-                    onChange: this.handleUser.bind(this), value: this.state.user }),
-                  this.state.user === '' && this.state.loggedIn && _react2.default.createElement(
-                    'span',
-                    { className: 'error' },
-                    'Enter a Username'
-                  )
+                _reactBootstrap.Col,
+                { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
+                'Password:'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { sm: 10 },
+                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'Password',
+                  onChange: this.handlePass.bind(this), value: this.state.pass }),
+                this.state.pass === '' && this.state.loggedIn && _react2.default.createElement(
+                  'span',
+                  { className: 'error' },
+                  'Enter a Pasword'
                 )
-              ),
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              null,
+              _react2.default.createElement(_reactBootstrap.Col, { sm: 6, md: 3 }),
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                { controlId: 'formHorizontalPassword' },
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
-                  'Password:'
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { sm: 10 },
-                  _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'Password',
-                    onChange: this.handlePass.bind(this), value: this.state.pass }),
-                  this.state.pass === '' && this.state.loggedIn && _react2.default.createElement(
-                    'span',
-                    { className: 'error' },
-                    'Enter a Pasword'
-                  )
-                )
+                'a',
+                { href: '/forgotUserName' },
+                'Forgot Username'
               ),
+              '|',
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                null,
-                _react2.default.createElement(_reactBootstrap.Col, { sm: 6, md: 3 }),
-                _react2.default.createElement(
-                  'a',
-                  { href: '/forgotUserName' },
-                  'Forgot Username'
-                ),
-                '|',
-                _react2.default.createElement(
-                  'a',
-                  { href: '/forgotPassword' },
-                  'Forgot Password'
-                ),
-                '\xA0'
+                'a',
+                { href: '/forgotPassword' },
+                'Forgot Password'
               ),
+              '\xA0'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              null,
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                null,
+                _reactBootstrap.Col,
+                { smOffset: 2, sm: 10 },
                 _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { smOffset: 2, sm: 10 },
-                  _react2.default.createElement(
-                    _reactBootstrap.Button,
-                    { bsStyle: 'info', type: 'submit' },
-                    'Log in'
-                  )
+                  _reactBootstrap.Button,
+                  { bsStyle: 'info', type: 'submit' },
+                  'Log in'
                 )
               )
             )
@@ -64876,156 +65071,152 @@ var Register = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container body' },
+        null,
         _react2.default.createElement(
-          _reactBootstrap.Panel,
+          _reactBootstrap.Well,
           { style: { marginTop: '80px' } },
           _react2.default.createElement(
-            _reactBootstrap.Well,
-            null,
+            'h2',
+            { style: { textAlign: 'center' } },
             _react2.default.createElement(
-              'h2',
-              { style: { textAlign: 'center' } },
+              'b',
+              null,
+              'Register'
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Form,
+            { horizontal: true, onSubmit: this.register.bind(this) },
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { controlId: 'formHorizontalEmail' },
               _react2.default.createElement(
-                'b',
-                null,
-                'Register'
+                _reactBootstrap.Col,
+                { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
+                'Email:'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { sm: 10 },
+                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: 'Email',
+                  onChange: this.handleEmail.bind(this), value: this.state.email }),
+                this.state.email === '' && this.state.posted === true && _react2.default.createElement(
+                  'span',
+                  { className: 'error' },
+                  'Enter a valid email!'
+                )
               )
             ),
             _react2.default.createElement(
-              _reactBootstrap.Form,
-              { horizontal: true, onSubmit: this.register.bind(this) },
+              _reactBootstrap.FormGroup,
+              { controlId: 'formHorizontalUsername' },
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                { controlId: 'formHorizontalEmail' },
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
-                  'Email:'
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { sm: 10 },
-                  _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: 'Email',
-                    onChange: this.handleEmail.bind(this), value: this.state.email }),
-                  this.state.email === '' && this.state.posted === true && _react2.default.createElement(
-                    'span',
-                    { className: 'error' },
-                    'Enter a valid email!'
-                  )
-                )
+                _reactBootstrap.Col,
+                { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
+                'Username:'
               ),
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                { controlId: 'formHorizontalUsername' },
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
-                  'Username:'
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { sm: 10 },
-                  _react2.default.createElement(_reactBootstrap.FormControl, { type: 'username', placeholder: 'Username',
-                    onChange: this.handleUsername.bind(this), value: this.state.username }),
-                  this.state.username === '' && this.state.posted === true && _react2.default.createElement(
-                    'span',
-                    { className: 'error' },
-                    'Enter a username!'
-                  )
+                _reactBootstrap.Col,
+                { sm: 10 },
+                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'username', placeholder: 'Username',
+                  onChange: this.handleUsername.bind(this), value: this.state.username }),
+                this.state.username === '' && this.state.posted === true && _react2.default.createElement(
+                  'span',
+                  { className: 'error' },
+                  'Enter a username!'
                 )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { controlId: 'formHorizontalPassword' },
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
+                'Password:'
               ),
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                { controlId: 'formHorizontalPassword' },
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
-                  'Password:'
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { sm: 10 },
-                  _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'Password',
-                    onChange: this.handlePassword.bind(this), value: this.state.password }),
-                  this.state.password === '' && this.state.posted === true && _react2.default.createElement(
-                    'span',
-                    { className: 'error' },
-                    'Enter a valid Password'
-                  )
+                _reactBootstrap.Col,
+                { sm: 10 },
+                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'Password',
+                  onChange: this.handlePassword.bind(this), value: this.state.password }),
+                this.state.password === '' && this.state.posted === true && _react2.default.createElement(
+                  'span',
+                  { className: 'error' },
+                  'Enter a valid Password'
                 )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { controlId: 'formHorizontalPasswordConfirm' },
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
+                'Confirm Password:'
               ),
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                { controlId: 'formHorizontalPasswordConfirm' },
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
-                  'Confirm Password:'
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { sm: 10 },
-                  _react2.default.createElement(_reactBootstrap.FormControl, { type: 'passwordconfirm', placeholder: 'Confirm Password',
-                    onChange: this.confirmPass.bind(this), value: this.state.confirmPass }),
-                  this.state.confirmPass === '' && this.state.posted === true && _react2.default.createElement(
-                    'span',
-                    { className: 'error' },
-                    'Confirm Password!'
-                  )
+                _reactBootstrap.Col,
+                { sm: 10 },
+                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'passwordconfirm', placeholder: 'Confirm Password',
+                  onChange: this.confirmPass.bind(this), value: this.state.confirmPass }),
+                this.state.confirmPass === '' && this.state.posted === true && _react2.default.createElement(
+                  'span',
+                  { className: 'error' },
+                  'Confirm Password!'
                 )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { controlId: 'formHorizontalSecurityQuestion' },
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
+                'Security Question:'
               ),
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                { controlId: 'formHorizontalSecurityQuestion' },
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
-                  'Security Question:'
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { sm: 10 },
-                  _react2.default.createElement(_reactBootstrap.FormControl, { type: 'securityquestion', placeholder: 'Enter a Security Question',
-                    onChange: this.secQ.bind(this), value: this.state.secQ }),
-                  this.state.secQ === '' && this.state.posted === true && _react2.default.createElement(
-                    'span',
-                    { className: 'error' },
-                    'Enter a Security Question!'
-                  )
+                _reactBootstrap.Col,
+                { sm: 10 },
+                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'securityquestion', placeholder: 'Enter a Security Question',
+                  onChange: this.secQ.bind(this), value: this.state.secQ }),
+                this.state.secQ === '' && this.state.posted === true && _react2.default.createElement(
+                  'span',
+                  { className: 'error' },
+                  'Enter a Security Question!'
                 )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { controlId: 'formHorizontalSecurityAnswer' },
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
+                'Security Answer:'
               ),
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                { controlId: 'formHorizontalSecurityAnswer' },
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { componentClass: _reactBootstrap.ControlLabel, sm: 2 },
-                  'Security Answer:'
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { sm: 10 },
-                  _react2.default.createElement(_reactBootstrap.FormControl, { type: 'securityanswer', placeholder: 'Enter a Security Answer',
-                    onChange: this.secA.bind(this), value: this.state.secA }),
-                  this.state.secA === '' && this.state.posted === true && _react2.default.createElement(
-                    'span',
-                    { className: 'error' },
-                    'Enter an Anser to your Security Question!'
-                  )
+                _reactBootstrap.Col,
+                { sm: 10 },
+                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'securityanswer', placeholder: 'Enter a Security Answer',
+                  onChange: this.secA.bind(this), value: this.state.secA }),
+                this.state.secA === '' && this.state.posted === true && _react2.default.createElement(
+                  'span',
+                  { className: 'error' },
+                  'Enter an Anser to your Security Question!'
                 )
-              ),
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              null,
               _react2.default.createElement(
-                _reactBootstrap.FormGroup,
-                null,
+                _reactBootstrap.Col,
+                { smOffset: 2, sm: 10 },
                 _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { smOffset: 2, sm: 10 },
-                  _react2.default.createElement(
-                    _reactBootstrap.Button,
-                    { bsStyle: 'info', type: 'submit' },
-                    'Submit'
-                  )
+                  _reactBootstrap.Button,
+                  { bsStyle: 'info', type: 'submit' },
+                  'Submit'
                 )
               )
             )
@@ -65112,100 +65303,102 @@ var Posts = function (_Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'container body' },
+                null,
                 _react2.default.createElement(
-                    _reactBootstrap.Panel,
-                    { style: { marginTop: '60px', backgroundColor: 'white', padding: '1px', border: '2px solid black' } },
-                    '\xA0',
+                    _reactBootstrap.Well,
+                    { style: { marginTop: '70px' } },
                     _react2.default.createElement(
-                        _reactBootstrap.Well,
-                        null,
+                        'form',
+                        { onSubmit: this.addPost.bind(this) },
                         _react2.default.createElement(
-                            'form',
-                            { onSubmit: this.addPost.bind(this) },
+                            _reactBootstrap.Row,
+                            null,
                             _react2.default.createElement(
-                                _reactBootstrap.Row,
+                                _reactBootstrap.ControlLabel,
+                                null,
+                                'Category:'
+                            ),
+                            _react2.default.createElement(
+                                _reactBootstrap.FormGroup,
+                                { controlId: 'formControlsSelect' },
+                                _react2.default.createElement(
+                                    _reactBootstrap.FormControl,
+                                    { componentClass: 'select', type: 'select', onChange: this.handleCategory.bind(this), value: this.state.category },
+                                    _react2.default.createElement(
+                                        'option',
+                                        { value: 'select', disabled: true },
+                                        'Select Category'
+                                    ),
+                                    _react2.default.createElement(
+                                        'option',
+                                        { value: 'Basketball' },
+                                        'Basketball'
+                                    ),
+                                    _react2.default.createElement(
+                                        'option',
+                                        { value: 'Football' },
+                                        'Football'
+                                    ),
+                                    _react2.default.createElement(
+                                        'option',
+                                        { value: 'Baseball' },
+                                        'Baseball'
+                                    )
+                                ),
+                                this.state.category === 'select' && this.state.isNull === true && _react2.default.createElement(
+                                    'span',
+                                    { style: { color: 'red', fontWeight: 'bold' } },
+                                    'Error Please Select a Category!'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                _reactBootstrap.FormGroup,
                                 null,
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
                                     null,
-                                    'Category:'
+                                    'Title:'
                                 ),
-                                _react2.default.createElement(
-                                    _reactBootstrap.FormGroup,
-                                    { controlId: 'formControlsSelect' },
-                                    _react2.default.createElement(
-                                        _reactBootstrap.FormControl,
-                                        { componentClass: 'select', type: 'select', onChange: this.handleCategory.bind(this), value: this.state.category },
-                                        _react2.default.createElement(
-                                            'option',
-                                            { value: 'select', disabled: true },
-                                            'Select Category'
-                                        ),
-                                        _react2.default.createElement(
-                                            'option',
-                                            { value: 'Basketball' },
-                                            'Basketball'
-                                        ),
-                                        _react2.default.createElement(
-                                            'option',
-                                            { value: 'Football' },
-                                            'Football'
-                                        ),
-                                        _react2.default.createElement(
-                                            'option',
-                                            { value: 'Baseball' },
-                                            'Baseball'
-                                        )
-                                    ),
-                                    this.state.category === 'select' && this.state.isNull === true && _react2.default.createElement(
-                                        'span',
-                                        { style: { color: 'red', fontWeight: 'bold' } },
-                                        'Error Please Select a Category!'
-                                    )
+                                _react2.default.createElement(_reactBootstrap.FormControl, {
+                                    name: 'title',
+                                    placeholder: 'Enter title here',
+                                    spellCheck: 'true',
+                                    value: this.state.title,
+                                    onChange: this.handleChange.bind(this)
+                                }),
+                                this.state.title === '' && this.state.isEmpty === true && _react2.default.createElement(
+                                    'span',
+                                    { style: { color: 'red', fontWeight: 'bold' } },
+                                    'Error Please Select a Title!'
                                 ),
+                                _react2.default.createElement('br', null),
                                 _react2.default.createElement(
-                                    _reactBootstrap.FormGroup,
+                                    _reactBootstrap.ControlLabel,
                                     null,
-                                    _react2.default.createElement(
-                                        _reactBootstrap.ControlLabel,
-                                        null,
-                                        'Title:'
-                                    ),
-                                    _react2.default.createElement(_reactBootstrap.FormControl, {
-                                        name: 'title',
-                                        placeholder: 'Enter title here',
-                                        spellCheck: 'true',
-                                        value: this.state.title,
-                                        onChange: this.handleChange.bind(this)
-                                    }),
-                                    this.state.title === '' && this.state.isEmpty === true && _react2.default.createElement(
-                                        'span',
-                                        { style: { color: 'red', fontWeight: 'bold' } },
-                                        'Error Please Select a Title!'
-                                    )
-                                )
-                            ),
+                                    'Upload Image:'
+                                ),
+                                _react2.default.createElement('input', { type: 'file', placeholder: 'Upload Image' })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            _reactBootstrap.ControlLabel,
+                            null,
+                            'Create Post:'
+                        ),
+                        _react2.default.createElement(_create2.default, null),
+                        _react2.default.createElement(
+                            _reactBootstrap.Row,
+                            null,
                             _react2.default.createElement(
-                                _reactBootstrap.ControlLabel,
-                                null,
-                                'Create Post:'
-                            ),
-                            _react2.default.createElement(_create2.default, null),
-                            _react2.default.createElement(
-                                _reactBootstrap.Row,
-                                null,
+                                _reactBootstrap.FormGroup,
+                                { style: { marginTop: '10px' } },
                                 _react2.default.createElement(
-                                    _reactBootstrap.FormGroup,
-                                    { style: { marginTop: '10px' } },
+                                    _reactBootstrap.Col,
+                                    { xs: 6, sm: 4 },
                                     _react2.default.createElement(
-                                        _reactBootstrap.Col,
-                                        { xs: 6, sm: 4 },
-                                        _react2.default.createElement(
-                                            _reactBootstrap.Button,
-                                            { bsStyle: 'info', type: 'submit' },
-                                            'Submit Post'
-                                        )
+                                        _reactBootstrap.Button,
+                                        { bsStyle: 'info', type: 'submit' },
+                                        'Submit Post'
                                     )
                                 )
                             )
@@ -65518,7 +65711,7 @@ var Create = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'editor' },
-        _react2.default.createElement(_slate.Editor, { style: { backgroundColor: 'white', height: '200px', width: '100%', border: '2px solid black', overflow: 'auto' },
+        _react2.default.createElement(_slate.Editor, { style: { backgroundColor: 'white', height: '140px', width: '100%', border: '2px solid black', overflow: 'auto' },
           spellCheck: true,
           placeholder: 'Enter text here...',
           schema: schema,
@@ -77685,173 +77878,169 @@ var UserRank = function (_Component) {
                 'div',
                 { className: 'rankings' },
                 _react2.default.createElement(
-                    _reactBootstrap.Panel,
-                    { style: { backgroundColor: 'lightblue', border: '2px solid black' } },
+                    _reactBootstrap.Well,
+                    { style: { backgroundColor: 'white', border: '2px solid black' } },
                     _react2.default.createElement(
-                        _reactBootstrap.Well,
-                        { style: { backgroundColor: 'white', border: '2px solid black' } },
+                        'h4',
+                        { className: 'text-center' },
                         _react2.default.createElement(
-                            'h4',
-                            { className: 'text-center' },
+                            'strong',
+                            null,
+                            'LeaderBoard'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        _reactBootstrap.Table,
+                        { bordered: true, hover: true, responsive: true, style: { border: '2px solid black' } },
+                        _react2.default.createElement(
+                            'thead',
+                            null,
                             _react2.default.createElement(
-                                'strong',
+                                'tr',
                                 null,
-                                'LeaderBoard'
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
+                                    'Rank'
+                                ),
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
+                                    'Username'
+                                ),
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
+                                    'Likes'
+                                ),
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
+                                    'Posts'
+                                )
                             )
                         ),
                         _react2.default.createElement(
-                            _reactBootstrap.Table,
-                            { bordered: true, hover: true, responsive: true, style: { border: '2px solid black' } },
+                            'tbody',
+                            null,
                             _react2.default.createElement(
-                                'thead',
+                                'tr',
                                 null,
                                 _react2.default.createElement(
-                                    'tr',
+                                    'td',
                                     null,
-                                    _react2.default.createElement(
-                                        'th',
-                                        null,
-                                        'Rank'
-                                    ),
-                                    _react2.default.createElement(
-                                        'th',
-                                        null,
-                                        'Username'
-                                    ),
-                                    _react2.default.createElement(
-                                        'th',
-                                        null,
-                                        'Likes'
-                                    ),
-                                    _react2.default.createElement(
-                                        'th',
-                                        null,
-                                        'Posts'
-                                    )
+                                    '1'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Mark'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '52'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '21'
                                 )
                             ),
                             _react2.default.createElement(
-                                'tbody',
+                                'tr',
                                 null,
                                 _react2.default.createElement(
-                                    'tr',
+                                    'td',
                                     null,
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '1'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        'Mark'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '52'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '21'
-                                    )
+                                    '2'
                                 ),
                                 _react2.default.createElement(
-                                    'tr',
+                                    'td',
                                     null,
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '2'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        'Demmy'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '43'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '25'
-                                    )
+                                    'Demmy'
                                 ),
                                 _react2.default.createElement(
-                                    'tr',
+                                    'td',
                                     null,
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '3'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        'Larry'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '40'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '22'
-                                    )
+                                    '43'
                                 ),
                                 _react2.default.createElement(
-                                    'tr',
+                                    'td',
                                     null,
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '4'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        'Barry'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '20'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '22'
-                                    )
+                                    '25'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '3'
                                 ),
                                 _react2.default.createElement(
-                                    'tr',
+                                    'td',
                                     null,
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '5'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        'Rarry'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '10'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        '22'
-                                    )
+                                    'Larry'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '40'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '22'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '4'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Barry'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '20'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '22'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '5'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Rarry'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '10'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '22'
                                 )
                             )
                         )
@@ -77907,7 +78096,7 @@ var HomeArticle = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'article' },
+                null,
                 _react2.default.createElement(
                     _reactBootstrap.Panel,
                     { style: { width: '300px' } },

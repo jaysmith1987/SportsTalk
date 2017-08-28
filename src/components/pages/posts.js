@@ -38,10 +38,8 @@ class Posts extends Component {
     render(){
 
         return (
-            <div className="container body">
-            <Panel  style={{marginTop:'60px', backgroundColor: 'white', padding: '1px', border:'2px solid black'}}>
-                &nbsp;
-            <Well>
+            <div>
+            <Well style={{marginTop:'70px'}}>
                 <form onSubmit={this.addPost.bind(this)} >
                 <Row>
                 <ControlLabel>Category:</ControlLabel>
@@ -64,6 +62,9 @@ class Posts extends Component {
                     onChange={this.handleChange.bind(this)}
                 />
                 {this.state.title === '' && this.state.isEmpty === true && <span style={{color: 'red', fontWeight:'bold'}}>Error Please Select a Title!</span>}
+                <br/>
+                <ControlLabel>Upload Image:</ControlLabel>
+                <input type="file" placeholder="Upload Image"/>
                 </FormGroup>
                 </Row>
                 <ControlLabel>Create Post:</ControlLabel>
@@ -79,7 +80,6 @@ class Posts extends Component {
                 </Row>
                 </form>
             </Well>
-            </Panel>
             </div>
         )
     }

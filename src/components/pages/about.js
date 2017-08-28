@@ -6,13 +6,11 @@ import AboutText from './about.text';
 class About extends Component {
   render() {
     return (
-      <div className="container body">
-        <Panel style={{marginTop:'100px'}}>
-        <Jumbotron >
+      <div>
+        <Jumbotron style={{marginTop: '100px'}}>
         <h2 style={{textAlign:'center'}}><b>Welcome to SportsTalk</b></h2>
-          <AboutText/>
+          <AboutText />
           </Jumbotron>
-          </Panel>
         </div>
         
     );

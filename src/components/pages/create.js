@@ -287,7 +287,7 @@ class Create extends React.Component {
   renderEditor = () => {
     return (
       <div className="editor">
-        <Editor style={{backgroundColor: 'white', height: '200px', width: '100%', border: '2px solid black', overflow:'auto'}}
+        <Editor style={{backgroundColor: 'white', height: '140px', width: '100%', border: '2px solid black', overflow:'auto'}}
           spellCheck
           placeholder={'Enter text here...'}
           schema={schema}

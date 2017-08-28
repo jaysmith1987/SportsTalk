@@ -9,6 +9,7 @@ var postsSchema = new Schema({
     blog: String,
     category: String,
     comments: [{type:Schema.ObjectId, ref:'comments'}],
+    images: String,
     date: { type:Date, default: Date.now}
 });
 

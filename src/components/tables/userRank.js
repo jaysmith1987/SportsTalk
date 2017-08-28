@@ -5,7 +5,6 @@ class UserRank extends Component {
     render(){
         return (
                 <div className="rankings">
-                <Panel style={{backgroundColor:'lightblue', border:'2px solid black'}}>
                 <Well style={{backgroundColor:'white', border:'2px solid black'}}>
                 <h4 className="text-center"><strong>LeaderBoard</strong></h4>
                 <Table  bordered hover responsive style={{border:'2px solid black'}}>
@@ -51,7 +50,6 @@ class UserRank extends Component {
                     </tbody>
                 </Table>
                 </Well>
-                </Panel>
                 </div>
         );
     }

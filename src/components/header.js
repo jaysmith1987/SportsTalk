@@ -6,7 +6,7 @@ import {Nav, NavItem, Navbar, NavDropdown, Label} from 'react-bootstrap';
 class Header extends React.Component{
     render(){
         return(
-          <div className="container header-text">
+          <div>
      <Navbar inverse fixedTop>
     <Navbar.Header>
       <Navbar.Brand href="/">
