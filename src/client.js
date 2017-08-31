@@ -9,6 +9,7 @@ import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import reducers from './reducers/index';
 import{applyMiddleware, createStore} from 'redux';
+import{postUser} from './actions/userActions';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
@@ -25,7 +26,7 @@ import Baseball from './components/pages/baseball';
 import Login from './components/pages/login';
 import Register from './components/pages/register';
 import Posts from './components/pages/posts';
-
+import Contacts from './components/pages/contacts';
 
 //import NotFound from './components/pages/notfound';
 
@@ -42,6 +43,7 @@ const Routes = (
                 <Route path="/login" component={Login}/>
                 <Route path="/posts" component={Posts}/>
                 <Route path="/register" component={Register}/>
+                <Route path="/contacts" component={Contacts}/>
             </Route>
         </Router>
     </Provider>

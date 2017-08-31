@@ -1,127 +1,141 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {FormGroup, FormControl, Form, Col, ControlLabel, Panel, Button, Well} from 'react-bootstrap';
+import {connect} from 'react-redux';
+import {findDOMNode} from 'react-dom';
+import {bindActionCreators} from 'redux';
+import {postUser, resetButton} from '../../actions/userActions';
+import axios from 'axios';
 
-
-
+class EmailError extends Component {
+      render(){
+        return (
+        <span>Enter valid email data</span>
+        )
+      }
+}
 
 class Register extends Component {
-  constructor(props){
-    super(props);
-    this.state = {email: '', username:'', password:'', confirmPass:'', secQ: '', secA: '', posted: false}
+  constructor(){
+    super()
+    this.state =({hasErrors: false})
   }
 
-  handleEmail(event){
-    this.setState({
-      email: event.target.value
-    })
-  }
 
-  handleUsername(event){
-    this.setState({username: event.target.value})
-  }
-
-  handlePassword(event){
-    this.setState({password:event.target.value})
-  }
-
-  confirmPass(event){
-    this.setState({confirmPass: event.target.value})
-  }
-
-  secQ(event){
-    this.setState({secQ:event.target.value})
-  }
-
-  secA(event){
-    this.setState({secA: event.target.value})
-  }
+ handleErrors (){
+  var password = findDOMNode(this.refs.password).value;
+  var confirm = findDOMNode(this.refs.confirm).value;
+  var email = findDOMNode(this.refs.email).value;
+  var username = findDOMNode(this.refs.username).value;
+  var securityQuestion = findDOMNode(this.refs.securityQuestion).value;
+  var securityAnswer = findDOMNode(this.refs.securityAnswer).value;
   
-  register(event){
-    event.preventDefault();
-    console.log(this.state.email, this.state.username);
-    console.log(this.state.password, this.state.confirmPass);
-    console.log(this.state.secQ, this.state.secA);
-    this.setState({posted: true});
+ }
+
+ handleSubmit(){
+  var password = findDOMNode(this.refs.password).value;
+  var confirm = findDOMNode(this.refs.confirm).value;
+  if(password !== '' && password === confirm){
+    const user=[{
+     email: findDOMNode(this.refs.email).value,
+     username: findDOMNode(this.refs.username).value,
+     password: findDOMNode(this.refs.password).value,
+     securityQuestion: findDOMNode(this.refs.securityQuestion).value,
+     securityAnswer: findDOMNode(this.refs.securityAnswer).value
+   }]
+   this.props.postUser(user);
+  } else {
+    console.log('this didnt work');
   }
+}
+
+
+ resetForm(){
+   this.props.resetButton();
+   findDOMNode(this.refs.email).value = '',
+   findDOMNode(this.refs.username).value = '',
+   findDOMNode(this.refs.password).value = '',
+   findDOMNode(this.refs.confirm).value = '',
+   findDOMNode(this.refs.securityQuestion).value = '',
+   findDOMNode(this.refs.securityAnswer).value = ''
+ }
+  
 
 
   render() {
+   
     return (
       <div>
       <Well style={{marginTop: '80px'}}>
       <h2 style={{textAlign: 'center'}}><b>Register</b></h2>
-      <Form horizontal onSubmit={this.register.bind(this)}>
-    <FormGroup controlId="formHorizontalEmail">
+      <Form horizontal>
+    <FormGroup controlId="formHorizontalEmail" validationState={this.props.validation}>
       <Col componentClass={ControlLabel} sm={2}>
         Email:
       </Col>
       <Col sm={10}>
-        <FormControl type="email" placeholder="Email"
-        onChange={this.handleEmail.bind(this)} value={this.state.email} />
-        {this.state.email === '' && this.state.posted === true && <span className="error">Enter a valid email!</span>}
+        <FormControl name="email" type="email" placeholder="Email" ref="email" onMouseOut={()=> this.onMouseOut()}/>
+        {this.state.hasErrors ?<EmailError/> : <span></span> }
+        <FormControl.Feedback/>
       </Col>
     </FormGroup>
 
-     <FormGroup controlId="formHorizontalUsername">
+     <FormGroup controlId="formHorizontalUsername" validationState={this.props.validation}>
       <Col componentClass={ControlLabel} sm={2}>
         Username:
       </Col>
       <Col sm={10}>
-        <FormControl type="username" placeholder="Username" 
-        onChange={this.handleUsername.bind(this)} value={this.state.username} />
-        {this.state.username === '' && this.state.posted === true && <span className="error">Enter a username!</span>}
+        <FormControl name="username" type="text" placeholder="Username" ref="username"/>
+        <FormControl.Feedback/>
+      </Col>
+    </FormGroup>
+
+    <FormGroup controlId="formHorizontalPassword" validationState={this.props.validation}>
+      <Col componentClass={ControlLabel} sm={2}>
+        Password:
+      </Col>
+      <Col sm={10}>
+        <FormControl name="password" type="password" placeholder="Password" ref="password"/>
+        <FormControl.Feedback/>
       </Col>
     </FormGroup>
 
     <FormGroup controlId="formHorizontalPassword">
       <Col componentClass={ControlLabel} sm={2}>
-        Password:
+        Confirm Password:
       </Col>
       <Col sm={10}>
-        <FormControl type="password" placeholder="Password"
-        onChange={this.handlePassword.bind(this)} value={this.state.password} />
-        {this.state.password === '' && this.state.posted === true && <span className="error">Enter a valid Password</span>}
+        <FormControl name="confirm" type="password" placeholder="Confirm Password" ref="confirm"/>
+        <FormControl.Feedback/>
       </Col>
     </FormGroup>
 
-     <FormGroup controlId="formHorizontalPasswordConfirm">
-      <Col componentClass={ControlLabel} sm={2}>
-      Confirm Password:
-      </Col>
-      <Col sm={10}>
-        <FormControl type="passwordconfirm" placeholder="Confirm Password" 
-        onChange={this.confirmPass.bind(this)} value={this.state.confirmPass}/>
-        {this.state.confirmPass === '' && this.state.posted === true && <span className="error">Confirm Password!</span>}
-      </Col>
-    </FormGroup>
-
-     <FormGroup controlId="formHorizontalSecurityQuestion">
+     <FormGroup controlId="formHorizontalSecurityQuestion" validationState={this.props.validation}>
       <Col componentClass={ControlLabel} sm={2}>
       Security Question:
       </Col>
       <Col sm={10}>
-        <FormControl type="securityquestion" placeholder="Enter a Security Question"
-        onChange={this.secQ.bind(this)} value={this.state.secQ} />
-        {this.state.secQ === '' && this.state.posted === true && <span className="error">Enter a Security Question!</span>}
+        <FormControl  name="securityQuestion" type="text" placeholder="Enter a Security Question" ref="securityQuestion"/>
+        <FormControl.Feedback/>
       </Col>
     </FormGroup>
 
-     <FormGroup controlId="formHorizontalSecurityAnswer">
+     <FormGroup controlId="formHorizontalSecurityAnswer" validationState={this.props.validation}>
       <Col componentClass={ControlLabel} sm={2}>
       Security Answer:
       </Col>
       <Col sm={10}>
-        <FormControl type="securityanswer" placeholder="Enter a Security Answer"
-        onChange={this.secA.bind(this)} value={this.state.secA} />
-        {this.state.secA === '' && this.state.posted === true && <span className="error">Enter an Anser to your Security Question!</span>}
+        <FormControl  name="securityAnswer" type="password" placeholder="Enter an Answer to the Security Question" ref="securityAnswer"/>
+        <FormControl.Feedback/>
       </Col>
     </FormGroup>
 
 
     <FormGroup>
       <Col smOffset={2} sm={10}>
-        <Button bsStyle="info" type="submit">
-          Submit
+        <Button onClick ={(!this.props.msg)?(this.handleSubmit.bind(this)):(this.resetForm.bind(this))} bsStyle={(!this.props.style)?("info"):(this.props.style)}
+        >
+          {(!this.props.msg)?("Register"):(this.props.msg)}
         </Button>
       </Col>
     </FormGroup>
@@ -130,6 +144,28 @@ class Register extends Component {
   </div>
     );
   }
+  onMouseOut(){
+    var email = findDOMNode(this.refs.email).value;
+    if(email.length < 5){
+      this.setState({hasErrors: true})
+    } else {
+    this.setState({hasErrors: false})
+    }
+  }
 }
 
-export default Register;
+
+
+function mapStateToProps(state){
+  return {
+      users: state.user.user,
+      msg: state.user.msg,
+      style: state.user.style,
+      validation: state.user.validation
+  }
+}
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({postUser, resetButton}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

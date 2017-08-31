@@ -9,7 +9,7 @@ import {Panel} from 'react-bootstrap';
 class Footer extends React.Component{
     render(){
         return (
-           <Panel footer="Copyright 2017 SportsTalkPro. All rights reserved">
+           <Panel className="text-center" footer="Copyright 2017 SportsTalkPro. All rights reserved">
            </Panel>
         )
     }

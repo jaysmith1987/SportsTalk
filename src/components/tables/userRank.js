@@ -5,11 +5,11 @@ class UserRank extends Component {
     render(){
         return (
                 <div className="rankings">
-                <Well style={{backgroundColor:'white', border:'2px solid black'}}>
+                <Well style={{backgroundColor:'lightsalmon', fontColor:'black', border:'2px solid black'}}>
                 <h4 className="text-center"><strong>LeaderBoard</strong></h4>
                 <Table  bordered hover responsive style={{border:'2px solid black'}}>
                     <thead > 
-                    <tr >
+                    <tr>
                         <th >Rank</th>
                         <th>Username</th>
                         <th>Likes</th>

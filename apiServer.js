@@ -35,7 +35,7 @@ app.post('/cart', function(req,res){
     req.session.cart = cart;
     req.session.save(function(err){
       if(err) {
-          throw err;
+          console.log('#API SESSION ERROR:' + err);
       }  
       res.json(req.session.cart);
     })
@@ -49,13 +49,13 @@ app.get('/cart', function(req,res){
 });
 var Users = require('./models/users.js');
 
-//Post Books
+//Post Users
 app.post('/users', function(req,res){
   var user = req.body;
 
   Users.create(user, function(err, users){
     if(err){
-      throw err;
+      console.log('POST_USER_REJECTED',err);
     }
     res.json(users);
   })
@@ -64,7 +64,7 @@ app.post('/users', function(req,res){
 app.get('/users', function(req,res){
   Users.find(function(err, users){
     if(err) {
-      throw err;
+      console.log('#API GET USER ERROR:' + err);
     }
     res.json(users)
   })
@@ -75,7 +75,7 @@ app.delete('/users/:_id', function(req,res){
 
   Users.remove(query, function(err, users){
     if(err){
-      throw err;
+      console.log('#API DELETE USER ERROR:' + err);
     }
     res.json(users);
   })
@@ -96,7 +96,7 @@ app.put('/users/:_id', function(req,res){
 
   Users.findOneAndUpdate(query, update, options, function(err, users){
     if(err){
-      throw err;
+      console.log('#API UPDATE USER ERROR' + err);
     }
     res.json(users);
   })
@@ -109,7 +109,7 @@ app.post('/posts', function(req,res){
 
   Posts.create(post, function(err, posts){
     if(err){
-      throw err;
+      console.log('#API POST BLOG ERROR:' + err);
     }
     res.json(posts);
   })
@@ -118,7 +118,7 @@ app.post('/posts', function(req,res){
 app.get('/posts', function(req,res){
   Posts.find(function(err, posts){
     if(err) {
-      throw err;
+      console.log('#API GET BLOG ERROR: ' + err);
     }
     res.json(posts)
   })
@@ -129,7 +129,7 @@ app.delete('/posts/:_id', function(req,res){
 
   Posts.remove(query, function(err, posts){
     if(err){
-      throw err;
+      console.log('#API DELETE BLOG ERROR: ' + err);
     }
     res.json(posts);
   })
@@ -149,7 +149,7 @@ app.put('/posts/:_id', function(req,res){
 
   Posts.findOneAndUpdate(query, update, options, function(err, posts){
     if(err){
-      throw err;
+      console.log('#API UPDATE BLOG ERROR:' + err);
     }
     res.json(posts);
   })
@@ -162,7 +162,7 @@ app.post('/comments', function(req,res){
 
   Comments.create(comment, function(err, comments){
     if(err){
-      throw err;
+      console.log('#API POST COMMENTS ERROR:' + err);
     }
     res.json(comments);
   })
@@ -171,7 +171,7 @@ app.post('/comments', function(req,res){
 app.get('/comments', function(req,res){
   Comments.find(function(err, comments){
     if(err) {
-      throw err;
+      console.log('#API GET COMMENTS ERROR:' + err);
     }
     res.json(comments)
   })
@@ -182,7 +182,7 @@ app.delete('/comments/:_id', function(req,res){
 
   Comments.remove(query, function(err, comments){
     if(err){
-      throw err;
+      console.log('#API DELETE COMMENTS ERROR:' + err);
     }
     res.json(comments);
   })
@@ -200,7 +200,7 @@ app.put('/comments/:_id', function(req,res){
 
   Comments.findOneAndUpdate(query, update, options, function(err, comments){
     if(err){
-      throw err;
+      console.log('#API UPDATE COMMENTS ERROR:' + err);
     }
     res.json(comments);
   })

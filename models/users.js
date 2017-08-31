@@ -23,6 +23,14 @@ var userSchema = new Schema({
         required: true,
         unique: true
     },
+    securityQuestion: {
+        type: String,
+        required: true
+    },
+    securityAnswer: {
+        type: String,
+        required: true
+    },
 
     lastlogin: {
          type: Date,
